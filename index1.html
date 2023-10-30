@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kriztech Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+  </head>
+  <style>
+
+    .button save-button{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      
+    }
+    .button run-button{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+    .button download-button{
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+
+
+  </style>
+  <body>
+    <nav>
+      
+      <a href="https://altkriz.github.io/htmleditor"><h1 style="color:rgb(255, 255, 255);" >  Kriztech Code Editor </h1></a>
+      <ul> 
+        <li><button id="block1-button">Home</button></li>
+        <li><button id="block2-button">About</button></li>
+        <li><button id="block3-button">Contact Us</button></li>
+      </ul>
+    </nav>
+    <div id="block1" class="block">
+      <!-- Editor -->
+      <div class="editor">
+        <h2>Code</h2>
+        <textarea id="code-editor"></textarea>
+      </div>
+      
+      <!-- Output -->
+      <div class="output">
+        <h2>Output <a href="https://kriztech.in/editor/code.html" target="_blank">View Output in New Window </a> <br><br> Save before Opening New Window</h2>
+       
+        <iframe id="output"></iframe>
+        <div class="button save-button" onclick="saveCode()">Save</div>
+        <div class="button run-button"  onclick="runCode()">Run</div>
+        <div class="button download-button"  onclick="downloadCode()">Download</div>
+       
+      </div>
+    </div>
+    <div id="block2" class="block">
+      <h1>About Us</h1>
+      <p>Welcome to the Kriztech Code Editor! Our mission is to provide a simple and intuitive code editor that helps developers write and test their code quickly and efficiently. Our editor is designed with the needs of developers in mind, and we are constantly working to improve and add new features to make your coding experience even better.</p>
+      <p>At Kriztech, we believe that coding should be accessible to everyone, regardless of their background or experience level. That's why we offer our editor for free, and we are committed to providing high-quality resources and support to help you succeed in your coding journey.</p>
+      <p>Thank you for choosing Kriztech, and happy coding!</p>
+      <center>
+        <h2>Follow Us</h2> 
+        <div class="social-media-icons">
+          <a href="https://twitter.com/altkriz" target="_blank"><i class="fab fa-twitter fa-2x" style="color: #55acee;"></i></a>
+          <a href="https://www.facebook.com/k.raza193" target="_blank"><i class="fab fa-facebook-f fa-2x" style="color: #3b5998;"></i></i></a>
+          <a href="https://www.instagram.com/k.raza193" target="_blank"><i class="fab fa-instagram fa-2x" style="color: #ac2bac;"></i></i></a>
+          <a href="https://github.com/altkriz" target="_blank"><i class="fab fa-github fa-2x" style="color: #333333;"></i></i></i></a>
+          <a href="https://altkriz.github.io/" target="_blank"><i class="fa fa-globe fa-2x"></i></a>
+        </div>
+      </center>
+      <div class="gallery">
+        <div class="product">
+            <img src="https://altkriz.github.io/img/krizbio.png" alt="Product 1">
+            <h2>KrizBio Shortlink & Bio Maker</h2>
+            <p>KrizBio by Kriztech: Your hub for free and fabulous web tools, 
+              including bio link pages, short links, ping services, 
+              SHA generation, QR codes, and more. 
+              Explore limitless digital possibilities with us!</p>
+              <a href="https://bio.kriztech.in"><span>Explore KrizBio</span></a>
+        </div>
+        <div class="product">
+            <img src="https://altkriz.github.io/htmleditor/img/kriznews.png" alt="Product 2">
+            <h2>KrizNews</h2>
+            <p>KrizNews by Kriztech: Your source for compelling and concise news updates, 
+              keeping you informed and inspired. Dive into a world of knowledge at your fingertips.</p>
+              <a href="https://news.kriztech.in"><span>Explore KrizNews</span></a>
+        </div>
+        <div class="product">
+          <img src="https://altkriz.github.io/htmleditor/img/blog.png" alt="Product 2">
+          <h2>KriztechBlogs</h2>
+          <p>KriztechBlogs: Your go-to source for IT and tech-related blogs, 
+            offering insights, expertise, and knowledge in a nutshell. Stay updated and informed.</p>
+          <a href="https://kriztechblogs.blogspot.com"><span>Explore KriztechBlogs</span></a>
+      </div>
+      <div class="product">
+        <img src="https://altkriz.github.io/htmleditor/img/blog.png" alt="Product 2">
+        <h2>KriztechBlogs</h2>
+        <p>KriztechBlogs: Your go-to source for IT and tech-related blogs, 
+          offering insights, expertise, and knowledge in a nutshell. Stay updated and informed.</p>
+        <a href="https://kriztechblogs.blogspot.com"><span>Explore KriztechBlogs</span></a>
+    </div>
+    </div>
+    </div>
+    <div id="block3" class="block">
+      <h1>Contact Us</h1>
+      <form id="contact-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea><br>
+        <button type="submit">Send</button>
+      </form>
+      <div id="response"></div>
+    </div>
+    <!-- JavaScript --> 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
